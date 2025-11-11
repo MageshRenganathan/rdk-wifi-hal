@@ -1422,7 +1422,7 @@ static void *dfs_event_thread(void *arg)
     wifi_hal_dbg_print("%s:%d: DFS event thread started\n", __func__, __LINE__);
 
     while (dfs_thread_running) {
-        ret = poll(&pfd, 1, 1000);
+        ret = poll(&pfd, 1, 3000);
         if (ret < 0) {
             if (errno == EINTR)
                 continue;
